@@ -12,9 +12,9 @@ RobotContainer::RobotContainer() : m_Auto(&m_drivetrain) {
 
   m_drivetrain.SetDefaultCommand(Drive(
     &m_drivetrain,
-    [this] { return m_controllerMain.GetX(); },
-    [this] { return m_controllerMain.GetY(); },
-    [this] { return m_controllerMain.GetZ(); })); 
+    [this] { return m_controllerMain.GetLeftX(); },
+    [this] { return m_controllerMain.GetLeftY(); },
+    [this] { return m_controllerMain.GetRightX(); })); 
 }
 
 void RobotContainer::ConfigureButtonBindings() {

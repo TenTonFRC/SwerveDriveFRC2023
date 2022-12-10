@@ -13,6 +13,7 @@
 #include "subsystems/drivetrain.h"
 
 #include <frc/Joystick.h>
+#include <frc/XboxController.h>
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -35,5 +36,5 @@ class RobotContainer {
 
   void ConfigureButtonBindings();
 
-  frc::Joystick m_controllerMain{controllerConstants::kControllerMainID};
+  frc::XboxController m_controllerMain{controllerConstants::kControllerMainID};
 };
