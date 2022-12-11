@@ -24,8 +24,8 @@ class hardwareSettings {
         motorDrive.primaryPID.selectedFeedbackSensor = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
         motorDrive.primaryPID.selectedFeedbackCoefficient = 1.0;
         motorDrive.closedloopRamp = 1.705000;
-        motorDrive.peakOutputForward = 0.20F;
-        motorDrive.peakOutputReverse = -0.20F;
+        motorDrive.peakOutputForward = 0.25F;
+        motorDrive.peakOutputReverse = -0.25F;
         motorDrive.nominalOutputForward = 0.018F;
         motorDrive.nominalOutputReverse = -0.018F;
         motorDrive.neutralDeadband = 0.001;
