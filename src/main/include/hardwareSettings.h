@@ -15,12 +15,13 @@ class hardwareSettings {
         //encoderTurn.velocityMeasurementWindow = 64;
         encoderTurn.absoluteSensorRange = ctre::phoenix::sensors::AbsoluteSensorRange::Signed_PlusMinus180;
         encoderTurn.sensorDirection = false;
-        encoderTurn.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToZero;
+        //Encoders Boot to Zero
+        // encoderTurn.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToZero;
         encoderTurn.sensorCoefficient = 360.0 / 4096.0;
         encoderTurn.unitString = std::string("deg");
         encoderTurn.sensorTimeBase = ctre::phoenix::sensors::SensorTimeBase::PerSecond;
 
-        //TalonFX
+        //TalonFX Drive Motors
         motorDrive.primaryPID.selectedFeedbackSensor = ctre::phoenix::motorcontrol::FeedbackDevice::IntegratedSensor;
         motorDrive.primaryPID.selectedFeedbackCoefficient = 1.0;
         motorDrive.closedloopRamp = 1.705000;
@@ -45,9 +46,10 @@ class hardwareSettings {
         ctre::phoenix::motorcontrol::StatorCurrentLimitConfiguration statorLimit(true, 12.1, 87.4, 0.4);
         //motorDrive.statorCurrLimit = statorLimit;
         motorDrive.motorCommutation = ctre::phoenix::motorcontrol::MotorCommutation::Trapezoidal;
-        motorDrive.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToAbsolutePosition;
 
-        //TalonFX
+       motorDrive.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToAbsolutePosition;
+
+        //TalonFX Turn Motors
         motorTurn.primaryPID.selectedFeedbackSensor = ctre::phoenix::motorcontrol::FeedbackDevice::RemoteSensor0;
         motorTurn.primaryPID.selectedFeedbackCoefficient = 1.0;
         motorTurn.closedloopRamp = 1.0;
@@ -75,6 +77,7 @@ class hardwareSettings {
         //motorTurn.statorCurrLimit = statorLimitB;
         motorTurn.motorCommutation = ctre::phoenix::motorcontrol::MotorCommutation::Trapezoidal;
         motorTurn.absoluteSensorRange = ctre::phoenix::sensors::AbsoluteSensorRange::Signed_PlusMinus180;
+        //Resets the wheel position
         motorTurn.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToAbsolutePosition;
     }
 };
