@@ -16,7 +16,7 @@ class hardwareSettings {
         encoderTurn.absoluteSensorRange = ctre::phoenix::sensors::AbsoluteSensorRange::Signed_PlusMinus180;
         encoderTurn.sensorDirection = false;
         //Encoders Boot to Zero
-        // encoderTurn.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToZero;
+        encoderTurn.initializationStrategy = ctre::phoenix::sensors::SensorInitializationStrategy::BootToZero;
         encoderTurn.sensorCoefficient = 360.0 / 4096.0;
         encoderTurn.unitString = std::string("deg");
         encoderTurn.sensorTimeBase = ctre::phoenix::sensors::SensorTimeBase::PerSecond;

@@ -50,7 +50,7 @@ class drivetrain : public frc2::SubsystemBase {
 
 */
 
-
+//Locations for the swerve drive modules reletive to the robot center
   frc::Translation2d m_locationFrontRight{+11.25_in, -7.25_in,};
   frc::Translation2d m_locationRearRight{-11.25_in, -7.25_in};
   frc::Translation2d m_locationFrontLeft{+11.25_in, +7.25_in};
@@ -64,6 +64,7 @@ class drivetrain : public frc2::SubsystemBase {
 
   AHRS m_navX{frc::SPI::kMXP};
 
+//Creating the kinemtics object using the module locations
   frc::SwerveDriveKinematics<4> m_kinematics{m_locationFrontRight,
                                              m_locationRearRight,
                                              m_locationFrontLeft,
